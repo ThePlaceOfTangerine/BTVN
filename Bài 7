@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+int main() {
+    int n; // Size of array
+    cin >> n;
+    int temp;
+
+    float positiveNumber, negativeNumber, zero;
+    positiveNumber = negativeNumber = zero = 0;
+    for(int i = 0; i < n; ++i)
+    {
+        cin >> temp;
+        if(temp < 0) ++negativeNumber;
+        else if(temp > 0) ++positiveNumber;
+        else ++zero;
+    }
+
+    printf("%.6f\n%.6f\n%.6f\n", (float)(positiveNumber/n), (float)(negativeNumber/n), (float)(zero/n));
+
+    return 0;
+}
