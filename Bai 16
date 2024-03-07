@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+const string temp = "hackerrank";
+
+bool checkString(string s)
+{
+    int i = 0, j = 0;
+    while(i < temp.size() && j < s.size())
+    {
+        if(temp[i] == s[j]){
+            ++i;
+            ++j;
+        }else ++j;
+    }
+    if(i == temp.size()) return 1;
+    return 0;
+}
+
+int main()
+{
+    int t;
+    cin >> t;
+    
+    while(t)
+    {
+        string s;
+        --t;
+        cin >> s;
+        if(checkString(s) ) cout << "YES\n";
+        else cout << "NO\n";
+    }
+    
+    return 0;
+}
