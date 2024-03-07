@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void Cout(string a, string b)
+{
+    cout << a[0];
+    for(unsigned int i = 1; i < b.size(); ++i) cout << b[i];
+    cout << ' ';
+}
+
+int main()
+{
+    string a, b;
+    cin >> a >> b;
+    cout << a.size() << ' ' << b.size() << '\n';
+    cout << a + b << '\n';
+    Cout(b, a);
+    Cout(a, b);
+    return 0;
+}
