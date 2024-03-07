@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+const char c = '#';
+
+void staircase(int n)
+{
+    int i = 1, k = n - 1;
+    while(n )
+    {
+        --n;
+        for(int temp = 1; temp <= k; ++temp) cout << ' ';
+        for(int temp = 1; temp <= i; ++temp) cout << c;
+        cout << '\n';
+        ++i;
+        --k;
+    }
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    staircase(n);
+    
+    return 0;
+}
