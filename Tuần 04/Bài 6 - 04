@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+long long ucln(int a, int b)
+{
+    if(a == 0) return b;
+    return ucln(b%a, a);
+}
+
+long long bcnn(int a, int b)
+{
+    return (a*b)/ucln(a, b);
+}
+
+long long bcnn_mang(vector <int> a, int n)
+{
+    if(n == 1) return a[0];
+    long long temp = bcnn(a[0], a[1]);
+    for(int i = 2; i < n; ++i)
+    {
+        temp = bcnn(temp, a[i]);
+    }
+    return temp;
+}
+
+int main()
+{
+    int n, m, temp, ucln, tmp = 1, res = 0;
+    cin >> n >> m;
+    
+    vector <int> a, b;
+    
+    for(int i = 0; i < n; ++i){
+        cin >> temp;
+        a.push_back(temp);
+    }
+    
+    for(int i = 0; i < m;  ++i){
+        cin >> temp;
+        b.push_back(temp);
+    }
+    
+    long long bcnn = bcnn_mang(a, n);
+    
+    for(int i = 0; i < m; ++i)
+    {
+        if(!i ) ucln = b[i];
+        ucln = __gcd(ucln, b[i]);
+    }
+
+    for(int i = bcnn; i <= ucln; i += bcnn){
+        if(!(ucln%i)) ++res;
+    }
+    
+    cout << res;
+    
+    return 0;
+}
