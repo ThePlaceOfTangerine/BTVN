@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+
+    map <string, int> m;
+    string s;
+
+    int q;
+    cin >> q;
+    while(q)
+    {
+        --q;
+        int x;
+        cin >> x >> s;
+        if(x == 1){
+            int k;
+            cin >> k;
+            m[s] += k;
+        }
+        else if(x == 2) m.erase(s);
+        else cout << m[s] << '\n';
+    }
+
+    return 0;
+}
